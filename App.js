@@ -5,10 +5,11 @@ import { config } from '@gluestack-ui/config';
 import Title from './components/Title';
 import Goal from './components/Goal';
 import WaterImage from './components/WaterImage';
+import Controls from './components/Controls';
 
 export default function App() {
 
-  const [volume, setVolume] = useState(500)
+  const [volume, setVolume] = useState(0)
 
   return (
     <GluestackUIProvider config={config}>
@@ -21,6 +22,7 @@ export default function App() {
         <Title />
         <Goal volume={volume} />
         <WaterImage />
+        <Controls setVolume={setVolume} volume={volume} />
       </Box>
     </GluestackUIProvider>
 
