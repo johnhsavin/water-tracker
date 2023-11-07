@@ -1,20 +1,22 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { GluestackUIProvider, Box } from '@gluestack-ui/themed'
+import { config } from '@gluestack-ui/config';
+import Title from './components/Title';
+import WaterImage from './components/WaterImage';
+
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+    <GluestackUIProvider config={config}>
+      <Box
+        w="100%"
+        h="$full"
+        justifyContent="center"
+        alignItems="center"
+        bgColor="$blue300">
+        <Title />
+        <WaterImage />
+      </Box>
+    </GluestackUIProvider>
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+  )
+}
